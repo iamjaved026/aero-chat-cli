@@ -4,9 +4,9 @@
   "description": "Lightweight, self-hostable terminal client for the Aero messaging platform by Javed Hussain (@iamjaved026). Features Socket.IO realtime chat, auto JWT refresh, friends management, multimedia attachments, and dock exploration.",
   "type": "module",
   "bin": {
-    "aero": "./bin/aero.js",
-    "aero-cli": "./bin/aero.js",
-    "aero-chat-cli": "./bin/aero.js"
+    "aero": "bin/aero.js",
+    "aero-cli": "bin/aero.js",
+    "aero-chat-cli": "bin/aero.js"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/iamjaved026/aero-chat-cli.git"
+    "url": "git+https://github.com/iamjaved026/aero-chat-cli.git"
   },
   "homepage": "https://github.com/iamjaved026/aero-chat-cli#readme",
   "bugs": {
