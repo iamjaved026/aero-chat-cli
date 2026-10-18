@@ -74,8 +74,28 @@ npx aero-chat-cli setup
 npx aero-chat-cli status
 ```
 
-### 3. Binary Aliases
-Once installed globally, you can invoke the CLI with any of these three aliases:
+### 3. Build & Install from Source (GitHub Clone)
+If you prefer to audit the source code, contribute, or build locally on your system:
+```bash
+# 1. Clone the repository from GitHub
+git clone https://github.com/iamjaved026/aero-chat-cli.git
+cd aero-chat-cli
+
+# 2. Install dependencies
+pnpm install    # or: npm install
+
+# 3. Compile TypeScript into production bundles
+npm run build
+
+# 4. Link globally so commands are available across your entire system
+npm link
+
+# 5. Run test suites to verify integrity
+npm test
+```
+
+### 4. Binary Aliases
+Once installed globally via NPM or linked from source, you can invoke the CLI with any of these three interchangeable aliases:
 ```bash
 aero --version
 aero-cli --version
