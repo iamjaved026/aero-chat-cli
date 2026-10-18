@@ -1,0 +1,91 @@
+{
+  "name": "aero-chat-cli",
+  "version": "0.1.0",
+  "description": "Lightweight, self-hostable, developer-friendly CLI client for the Aero messaging platform by Javed Hussain (@iamjaved026)",
+  "type": "module",
+  "bin": {
+    "aero": "./bin/aero.js",
+    "aero-cli": "./bin/aero.js",
+    "aero-chat-cli": "./bin/aero.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamjaved026/aero-chat-cli.git"
+  },
+  "homepage": "https://github.com/iamjaved026/aero-chat-cli#readme",
+  "bugs": {
+    "url": "https://github.com/iamjaved026/aero-chat-cli/issues"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "javed hussain",
+    "iamjaved026",
+    "aero",
+    "aero-cli",
+    "aero-chat-cli",
+    "cli",
+    "chat",
+    "messaging",
+    "terminal-chat",
+    "socket.io",
+    "realtime",
+    "developer-tools",
+    "open-source",
+    "self-hosted",
+    "jwt-refresh",
+    "headless-client",
+    "automation",
+    "rest-api"
+  ],
+  "author": {
+    "name": "Javed Hussain",
+    "url": "https://javedhussain.com"
+  },
+  "contributors": [
+    {
+      "name": "Javed Hussain",
+      "url": "https://github.com/iamjaved026"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@inquirer/prompts": "^7.3.2",
+    "axios": "^1.7.9",
+    "commander": "^13.1.0",
+    "ora": "^8.2.0",
+    "picocolors": "^1.1.1",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "@vitest/coverage-v8": "^3.2.7",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

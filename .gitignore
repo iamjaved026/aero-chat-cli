@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+research/
+*.har
+*.har.*
+ws_frames.json
+scratch/
+*.log
+.env*
+.aerorc.json
+.DS_Store
+Thumbs.db
