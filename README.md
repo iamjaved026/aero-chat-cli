@@ -102,6 +102,12 @@ aero-cli --version
 aero-chat-cli --version
 ```
 
+> [!TIP]
+> **WSL (Windows Subsystem for Linux) Users:**  
+> If you are running WSL without a native Linux Node.js installed and encounter `exec: node: not found` when invoking global Windows npm packages, simply symlink Windows Node into Linux:  
+> `sudo ln -s "/mnt/c/Program Files/nodejs/node.exe" /usr/local/bin/node`  
+> or install native Linux Node via `sudo apt install -y nodejs`.
+
 ---
 
 ## ⚡ Quickstart Wizard
