@@ -1,6 +1,6 @@
 {
   "name": "aero-chat-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lightweight, self-hostable terminal client for the Aero messaging platform by Javed Hussain (@iamjaved026). Features Socket.IO realtime chat, auto JWT refresh, friends management, multimedia attachments, and dock exploration.",
   "type": "module",
   "bin": {

@@ -7,7 +7,7 @@ export function registerCreditsCommand(program: Command): void {
     const creditsData = {
       project: 'Aero Chat CLI',
       package: 'aero-chat-cli',
-      version: '0.1.0',
+      version: '0.1.1',
       apiSpecification: 'Aero / Intridium Web v1.5.0',
       developer: {
         name: 'Javed Hussain',

@@ -17,7 +17,7 @@ const program = new Command();
 program
   .name('aero')
   .description('Lightweight, self-hostable CLI client for the Aero messaging platform')
-  .version('0.1.0')
+  .version('0.1.1')
   .option('--json', 'Output results in JSON format')
   .option('-q, --quiet', 'Suppress non-essential output and spinners')
   .option('-y, --yes', 'Automatically answer yes to prompts')
@@ -75,15 +75,20 @@ program
   .description('Display active session state and connectivity (alias for "aero auth status")')
   .action(handleStatus);
 
-export { program };
-
+let didRun = false;
 async function run(): Promise<void> {
+  if (didRun) return;
+  didRun = true;
   try {
     await program.parseAsync(process.argv);
   } catch (err: unknown) {
     if (err && typeof err === 'object' && 'code' in err) {
       const code = (err as { code: string; exitCode?: number }).code;
-      if (code === 'commander.helpDisplayed' || code === 'commander.version') {
+      if (
+        code === 'commander.helpDisplayed' ||
+        code === 'commander.help' ||
+        code === 'commander.version'
+      ) {
         process.exit(0);
       }
       if (code.startsWith('commander.')) {
@@ -111,7 +116,14 @@ async function run(): Promise<void> {
   }
 }
 
+export { program, run };
+
 // When executed directly, run the CLI
-if (process.argv[1]?.endsWith('aero.js') || process.argv[1]?.endsWith('index.js')) {
+const isTestEnv = Boolean(process.env.VITEST || process.env.NODE_ENV === 'test');
+const isCliEntry =
+  Boolean(process.argv[1]) &&
+  /(?:^|[\\/])(aero|aero-cli|aero-chat-cli|index)(?:\.[a-z]+)?$/i.test(process.argv[1]);
+
+if (!isTestEnv && isCliEntry) {
   run();
 }

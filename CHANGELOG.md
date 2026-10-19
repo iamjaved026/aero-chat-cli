@@ -5,6 +5,13 @@ All notable changes to `aero-chat-cli` will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-10-19
+
+### Fixed
+- **Unix & Termux Binary Execution**: Fixed root binary resolution where extensionless symlinks (e.g., `/usr/bin/aero`, Termux `$PREFIX/bin/aero`, `aero-cli`, `aero-chat-cli`) failed to match trailing `.js` filters, causing silent exits without output.
+- **Direct Entry Guard**: Explicitly invoked `run()` from `bin/aero.js` with idempotent execution guard.
+- **Commander Exit Handling**: Correctly exit with status `0` when `--help` or default help (`commander.help`) is displayed.
+
 ## [0.1.0] - 2026-10-17
 
 ### Added
